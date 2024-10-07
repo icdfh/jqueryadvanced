@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Комбинированная анимация</title>
+
+  <!-- Подключаем jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #comboBox {
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+      display: none; 
+      background-color: red;
+      border-radius: 15px;
+      margin: auto;
+    
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Комбинированная анимация</h1>
+  <button id="comboButton">Запустить анимацию</button>
+
+  <div id="comboBox"></div>
+
+  <script>
+    // Комбинированная анимация — плавное появление и изменение размеров
+    $('#comboButton').click(function() {
+      $('#comboBox').fadeIn(800).animate({
+    
+        width: '1000px',
+        height: '800px',
+        
+      }, 3000);
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Изменение изображения</title>
+
+  <!-- Подключаем jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+  <img id="myImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmRtCXZnOIjV-MQkeAjjoPd2_SHPmTzJur2A&sg" alt="Изображение">
+  <button id="changeImage1">Изменить изображение</button>
+  
+  <script>
+    // Изменяем атрибут 'src' изображения при клике на кнопку
+    $('#changeImage').click(function() {
+      $('#myImage').attr('src', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQIiXkVrdAGHB51MWhJPUDoVgqYxa-2NBThGJ_d9ZZi49g_Ouy-KyT3CZtx72gAaLzGYc&usqp=CAU');
+    });
+  </script>
+
+</body>
+</html>

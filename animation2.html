@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Плавное раскрытие и скрытие панели</title>
+
+  <!-- Подключаем jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #slidingPanel {
+      width: 300px;
+      background-color: lightcoral;
+      padding: 15px;
+      display: none; /* Скрыта по умолчанию */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Плавное раскрытие и скрытие панели</h1>
+  <button id="slideButton">Показать/Скрыть панель</button>
+
+  <div id="slidingPanel">
+    <p>Это панель, которая будет плавно раскрываться и скрываться при нажатии на кнопку. Такой эффект используется для раскрытия меню, панелей настроек и других элементов интерфейса.</p>
+  </div>
+
+  <script>
+    // Анимация скольжения панели
+    $('#slideButton').click(function() {
+      $('#slidingPanel').slideToggle(700); // Используем slideToggle с длительностью 400ms
+    });
+  </script>
+
+</body>
+</html>

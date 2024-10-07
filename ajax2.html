@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Загрузка пользователей с AJAX</title>
+
+  <!-- Подключаем jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    #loader {
+      display: none;
+      font-size: 18px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Загрузка списка пользователей</h1>
+  <p>Нажмите кнопку ниже, чтобы загрузить список пользователей с сервера:</p>
+  
+  <button id="loadUsersButton">Загрузить пользователей</button>
+  <div id="loader">Загрузка данных, пожалуйста подождите...</div>
+  <table id="usersTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Имя</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Данные будут добавлены сюда -->
+    </tbody>
+  </table>
+
+  <script>
+    // Выполняем AJAX запрос при клике на кнопку
+    $('#loadUsersButton').click(function() {
+      $('#loader').show();  // Показать индикатор загрузки
+
+      $.get('https://jsonplaceholder.typicode.com/users', function(data) {
+        $('#loader').hide();  // Скрыть индикатор загрузки
+
+        // Очищаем таблицу перед загрузкой новых данных
+        $('#usersTable tbody').empty();
+
+        // Проходим по массиву пользователей и добавляем строки в таблицу
+        data.forEach(function(user) {
+          let row = `<tr>
+                      <td>${user.id}</td>
+                      <td>${user.name}</td>
+                      <td>${user.email}</td>
+                    </tr>`;
+          $('#usersTable tbody').append(row);
+        });
+      }).fail(function() {
+        $('#loader').hide();
+        alert('Ошибка загрузки данных');
+      });
+    });
+  </script>
+
+</body>
+</html>

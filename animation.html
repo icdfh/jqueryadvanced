@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Анимация изменения размера и перемещения</title>
+
+  <!-- Подключаем jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #animatedBox {
+      width: 100px;
+      height: 100px;
+      background-color: lightgreen;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Анимация изменения размера и перемещения</h1>
+  <button id="animateButton">Запустить анимацию</button>
+
+  <div id="animatedBox"></div>
+
+  <script>
+    // Анимация изменения размеров и перемещения блока
+    $('#animateButton').click(function() {
+      $('#animatedBox').animate({
+        width: '200px',   // Увеличиваем ширину
+        height: '200px',  // Увеличиваем высоту
+        top: '+=100px'   // Перемещаем вправо на 100px
+      }, 1000);  // Длительность анимации — 1 секунда
+    });
+  </script>
+
+</body>
+</html>

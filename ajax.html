@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJAX запрос</title>
+
+  <!-- Подключаем jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+  <button id="loadData">Загрузить данные</button>
+  <div id="dataContainer">Здесь появятся данные</div>
+
+  <script>
+    // Выполняем GET-запрос и выводим данные
+    $('#loadData').click(function() {
+      $.get('https://jsonplaceholder.typicode.com/posts/1', function(data) {
+        $('#dataContainer').text(data.title);
+      });
+    });
+  </script>
+
+</body>
+</html>
